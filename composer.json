@@ -1,0 +1,19 @@
+{
+    "name": "hoter/twitter-bot",
+    "description": "TwitterBit allows to retweet or add to favourite tweets",
+    "authors": [
+        {
+            "name": "Erlan Aytpaev",
+            "email": "aytpaev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "TwitterBot": "src/"
+        }
+    }
+}
