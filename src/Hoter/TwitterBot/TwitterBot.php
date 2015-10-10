@@ -1,6 +1,7 @@
 <?php
 
 namespace Hoter\TwitterBot;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterBot {
   private $connection;
