@@ -1,6 +1,6 @@
 <?php
 
-namespace Hoter\TwitterBot;
+namespace Aytpaev\TwitterBot;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterBot {

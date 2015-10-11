@@ -1,5 +1,5 @@
 {
-    "name": "hoter/twitter-bot",
+    "name": "aytpaev/twitter-bot",
     "description": "TwitterBit allows to retweet or add to favourite tweets",
     "authors": [
         {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Hoter\\TwitterBot": "src/"
+            "Aytpaev\\TwitterBot": "src/"
         }
     }
 }
