@@ -10,16 +10,24 @@ class TwitterBot {
     $this->connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
   }
 
-  public function retweet($since = -1, $count = 1) {
-   if ($since === -1) {
+  public function retweetByHashTag($hashtag, $since = -1, $count = 1) {
+   if ($since < 0) {
      $since = $this->findLastTweet();
    }
 
-   
+   $tweets = $this->connection->get("search/tweets", array('q' => '#' . $hashtag, 'result_type' => 'mixed', 'since_id' => $since + 1, 'count' => $count));
+   if (!empty($tweets->statuses)) {
+     foreach ($tweets->statuses as $tweet) {
+       $this->connection->post("statuses/retweet/" . $tweet->id);
+     }
+   }
   }
 
-  public function findLastTweet() {
-    $message = $this->connection->get("statuses/user_timeline", array('count' => 1));
-    print_r($message);
+  protected function findLastTweet() {
+    $messages = $this->connection->get("statuses/user_timeline", array('count' => 1));
+    if ($messages) {
+      $message = reset($messages);
+      return $message->id;
+    }
   }
 }
