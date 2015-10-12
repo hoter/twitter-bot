@@ -20,7 +20,11 @@ class TwitterBot {
      foreach ($tweets->statuses as $tweet) {
        $this->connection->post("statuses/retweet/" . $tweet->id);
      }
+
+     return TRUE;
    }
+
+   return FALSE;
   }
 
   protected function findLastTweet() {
